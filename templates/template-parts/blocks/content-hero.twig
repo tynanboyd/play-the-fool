@@ -1,0 +1,33 @@
+{#
+/**
+* Block Name: Hero
+*
+* This template renders a full-width background image and a headline with a button
+**/
+#}
+
+{% extends 'templates/template-parts/blocks/base-block.twig' %}
+
+{% block blockContent %}
+
+{% set background_image = TimberImage(fields.background_image)|resize(1500) %}
+
+<section
+  class="hero component"
+  style="background-image:url('{{ background_image }}');"
+>
+
+  <div class="hero__inner">
+    <h2 class="hero__headline">{{ fields.headline }}</h2>
+    <p class="hero__paragraph">{{ fields.paragraph }}</p>
+    {% if fields.button %}
+      <a target="{{ fields.button.target }}" href="{{ fields.button.url }}" class="hero__button button button--ghost">{{ fields.button.title }}</a>
+    {% endif %}
+     {% if fields.button_two %}
+      <a target="{{ fields.button_two.target }}" href="{{ fields.button_two.url }}" class="hero__button button button--ghost">{{ fields.button_two.title }}</a>
+    {% endif %}
+  </div>
+
+</section>
+
+{% endblock %}

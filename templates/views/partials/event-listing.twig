@@ -1,0 +1,98 @@
+<section class="event-listing container">
+  {% if item.terms('event_category') is not empty %}
+    <span class="event-listing__headliner event-listing__terms">
+      {% for term in item.terms('event_category') %}
+        {% if term.name != 'Regular' %}
+          {{ term.name }}{{ loop.last ? '' : ', ' }}
+        {% endif %}
+      {% endfor %}
+    </span>
+  {% endif %}
+  <h2 class="event-listing__title"><a href="{{ item.link }}">{{ item.title }}</a></h2>
+  {% if function('is_single') %}
+    {% if item.meta('embed') and item.meta('embed_on') == 1 %}
+      <div class="responsive-embed event-listing__embed">
+        {{ item.meta('embed') }}
+      </div>
+    {% endif %}
+  {% endif %}
+  {% if item.from_location %}
+    <span class="event-listing__from-location">{{ item.from_location }}</span>
+  {% endif %}
+  <div class="row">
+    {% if item.thumbnail or item.pullquotes %}
+      <div class="col-12 col-md-4">
+        {% if item.thumbnail %}
+        <div class="event-listing__thumbnail-wrapper">
+          <img src="{{ TimberImage(item.thumbnail)|resize(500) }}" alt="{{ item.thumbnail.alt }}">
+        </div>
+        {% endif %}
+        {% if item.meta('pullquotes') %}
+          <div class="event-listing__pullquotes">
+            {% for quote in item.meta('pullquotes') %}
+              <blockquote class="event-listing__pullquote">
+                <p class="event-listing__pullquote-quotation">&ldquo;{{ quote.quotation }}&rdquo;</p>
+                <footer>
+                  <cite class="event-listing__pullquote-citation">{{ quote.citation }}</cite>
+                </footer>
+              </blockquote>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="col-12 col-md-8">
+      <div class="event-listing__meta">
+        {% if item.meta('showtimes') %}
+          <div class="event-listing__showtimes">
+            {% for showtime in item.meta('showtimes') %}
+              <div class="event-listing__showtime showtime">
+                <span class="showtime__month">{{ showtime.showtime|date('M') }}</span>
+                <span class="showtime__day">{{ showtime.showtime|date('d') }}</span>
+                <span class="showtime__time">{{ showtime.showtime|date('g:ia') }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if item.runtime or item.age_restriction or item.ticket_prices %}
+          <div class="event-listing__meta-information">
+            {% if item.runtime %}
+              <span class="event-listing__runtime">
+                {{ item.runtime}}
+              </span>
+            {% endif %}
+            {% if item.age_restriction %}
+              <span class="event-listing__age-restriction">
+                {{ item.age_restriction }}
+              </span>
+            {% endif %}
+            {% if item.ticket_prices %}
+              <span class="event-listing__ticket-prices">{{ item.ticket_prices }}</span>
+            {% endif %}
+            {% if item.ticket_price_disclaimer %}
+              <em class="event-listing__ticket-price-disclaimer">{{ item.ticket_price_disclaimer }}</em>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      {% if not function('is_single') and item.meta('embed') and item.meta('embed_on') == 1 %}
+        <div class="event-listing__watch-now">
+          <a href="{{ item.link }}" class="button button--primary button--large">Watch Now</a>
+        </div>
+      {% endif %}
+      {% if item.show_summary and not function('is_single') %}
+      <div class="event-listing__description">
+        {{ item.meta('show_summary') }}
+      </div>
+      {% endif %}
+      {% if item.show_description and function('is_single') %}
+      <div class="event-listing__description">
+        {{ item.meta('show_description') }}
+      </div>
+      {% endif %}
+      {% if item.ticket_link %}
+        <a class="button button--primary event-listing__button" href="{{ item.ticket_link.url }}" target="{{ item.ticket_link.target }}">{{ item.ticket_link.title }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

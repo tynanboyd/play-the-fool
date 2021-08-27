@@ -1,0 +1,13 @@
+.staff-member {
+  border-bottom: 1px solid $red;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+
+  &__headshot-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  &__headshot {
+    object-fit: cover;
+  }
+}

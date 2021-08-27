@@ -1,0 +1,21 @@
+.blog-single {
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__featured-image {
+    object-fit: cover;
+  }
+
+  &__main {
+
+  }
+
+  &__date {
+    color: transparentize($white, 0.1);
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    display: block;
+  }
+}

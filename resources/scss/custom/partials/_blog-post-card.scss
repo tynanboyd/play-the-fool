@@ -1,0 +1,52 @@
+.blog-post-card {
+  border-radius: $border-radius;
+  font-weight: bold;
+  box-shadow: -2px 3px 5px transparentize($purple, 0.8);
+  transition: box-shadow 0.2s;
+  margin-bottom: 2rem;
+  $block: &;
+  position: relative;
+  z-index: 3;
+
+  &:hover {
+    box-shadow: -2px 5px 7px transparentize($purple, 0.5);
+  }
+
+  &__image {
+    margin-bottom: 0;
+    object-fit: cover;
+  }
+
+  &__top {
+    border-radius: $border-radius $border-radius 0px 0px;
+    overflow: hidden;
+  }
+
+  &__body {
+    background-color: $white;
+    padding: 24px;
+    border-radius: 0px 0px $border-radius $border-radius;
+  }
+
+  &__preview {
+    color: $darkgrey;
+    line-height: 1.4;
+    font-weight: normal;
+  }
+
+  &__date {
+    color: $darkgrey;
+  }
+
+  &__title {
+    color: $purple;
+  }
+
+  &__title-link {
+
+  }
+
+  .read-more {
+    color: $purple;
+  }
+}

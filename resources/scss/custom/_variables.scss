@@ -1,0 +1,58 @@
+/**
+
+Table of Contents:
+---------------------
+1. Colours
+2. Typography
+
+**/
+
+// Colours
+// ---------------------
+
+$lavender: #DAD9FF;
+$black: #0B0303;
+$white: #FFFFFF;
+$purple: #541388;
+$red: #C82430;
+$yellow: #FFE36E;
+$darkgrey: #5A5858;
+$darkblue: #452195;
+$softblue: #7EA2D2;
+
+// general colour needs
+$color-list: (
+  lavender: $lavender,
+  black: $black,
+  white: $white,
+  purple: $purple,
+  red: $red,
+  yellow: $yellow,
+  darkgrey: $darkgrey,
+ );
+
+@each $key, $val in $color-list {
+
+  body {
+
+    .background--#{$key} {
+      background-color: $val;
+    }
+
+    .color--#{$key} {
+      color: $val;
+    }
+
+  }
+}
+
+
+// Typography
+// ---------------------
+
+$font-main: brandon-grotesque, sans-serif;
+
+
+// Components
+// ---------------------
+$border-radius: 5px;

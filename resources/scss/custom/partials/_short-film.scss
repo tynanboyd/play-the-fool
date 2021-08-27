@@ -1,0 +1,18 @@
+.short-film {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid $purple;
+  padding-bottom: 2rem;
+
+  @include MQ(L) {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+
+  }
+
+  &__title {
+    @include MQ(L) {
+      margin-top: 0rem;
+    }
+  }
+}

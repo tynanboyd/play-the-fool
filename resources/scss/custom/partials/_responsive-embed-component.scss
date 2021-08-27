@@ -1,0 +1,7 @@
+.responsive-embed-component {
+  background-color: $lavender;
+
+  .responsive-embed {
+    box-shadow: -2px 5px 7px transparentize($purple, 0.5);
+  }
+}

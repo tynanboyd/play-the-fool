@@ -1,0 +1,68 @@
+.button,
+.wp-block-button__link {
+  // button styles
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 0.7rem 1rem;
+  font-weight: bold;
+  border-radius: $border-radius;
+
+  &:hover,
+  &:active {
+    // button hover styles
+    text-decoration: none;
+  }
+
+  &--primary {
+    color: $purple;
+    background-color: $yellow;
+    box-shadow: 4px 4px 0px $purple;
+    transition: all 0.1s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+
+    &:hover {
+      box-shadow: 3px 3px 0px $purple;
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $white;
+      color: $purple;
+    }
+  }
+
+  &--secondary {
+    // secondary
+
+    &:hover {
+      // secondary hover
+    }
+  }
+
+  &--large {
+    // large button styles
+  }
+}
+
+
+.gform_wrapper {
+
+  input.gform_button,
+  input[type='submit'] {
+    @extend .button;
+  }
+}
+
+.wp-block-button__link {
+  color: $purple !important;
+  background-color: $yellow;
+  box-shadow: 4px 4px 0px $purple;
+  transition: all 0.1s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+
+  &:hover {
+    box-shadow: 3px 3px 0px $purple;
+  }
+}

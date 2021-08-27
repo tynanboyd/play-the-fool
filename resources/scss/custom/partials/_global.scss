@@ -1,0 +1,29 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.padding-y {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.main-page-content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

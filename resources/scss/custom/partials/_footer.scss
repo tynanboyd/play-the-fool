@@ -1,0 +1,61 @@
+.site-footer {
+  color: $white;
+  background-color: $black;
+
+  svg, path {
+    color: $white;
+    fill: $white;
+  }
+
+  &__top {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $red;
+  }
+
+  &__bottom {
+    padding: 2rem 0;
+  }
+
+  &__social-link {
+    margin-right: 10px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    svg {
+      height: 22px;
+
+      path {
+        transition: fill 0.2s;
+      }
+    }
+
+    &:hover {
+      svg path {
+        fill: $red;
+      }
+    }
+  }
+
+  &__association {
+    font-size: 0.78rem;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  &__associated-logos {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__associated-logo {
+    width: 60px;
+    object-fit: cover;
+  }
+
+  &__associated-logo-wrap {
+    max-width: 60px;
+    margin-left: 1rem;
+  }
+}

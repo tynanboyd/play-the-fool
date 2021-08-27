@@ -1,0 +1,76 @@
+.woocommerce-billing-fields .form-row,
+.woocommerce-shipping-fields .form-row,
+.woocommerce form .form-row {
+  display: block;
+}
+
+.woocommerce .col2-set .col-1,
+.woocommerce-page .col2-set .col-1,
+.woocommerce .col2-set .col-2,
+.woocommerce-page .col2-set .col-2 {
+  max-width: unset;
+}
+
+.woocommerce-page {
+  .product {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product_title {
+    display: none;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    @extend .button;
+    color: $purple;
+    background-color: $yellow;
+    box-shadow: 4px 4px 0px $purple;
+    transition: all 0.1s cubic-bezier(0.1, 0.7, 1, 0.1);
+    margin: 1rem 0;
+
+    &:hover {
+      box-shadow: 3px 3px 0px $purple;
+    }
+  }
+
+  .woocommerce-product-gallery {
+    width: 300px;
+  }
+
+  .woocommerce-product-loop {
+  }
+
+  .woocommerce-tabs {
+    margin-top: 2rem;
+  }
+
+  .tabs {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+
+    li {
+      margin-right: 15px;
+      border-bottom: 2px solid grey;
+
+      a {
+        color: grey;
+        &:hover {
+          color: $purple;
+        }
+      }
+
+      &.active {
+        border-color: $purple;
+        a {
+          color: $purple;
+        }
+      }
+    }
+  }
+}

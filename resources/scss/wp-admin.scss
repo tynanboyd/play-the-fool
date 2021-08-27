@@ -1,0 +1,26 @@
+/* admin-styles.css */
+
+/* Hide Update Notifications */
+
+#adminmenu .update-plugins { display: none; }
+
+/* ACF */
+
+.acf-field.short-wysiwyg .acf-editor-wrap iframe[style] {
+  height: 175px !important;
+  min-height: 100px;
+}
+
+.acf-image-uploader img {
+  max-width: 100%;
+  height: auto;
+}
+
+.frontend-styles,
+.wp-block[data-type*="core"] {
+  @import 'custom/variables';
+  @import 'vendor/bootstrap';
+  @import 'custom/partials';
+
+  font-family: $font-main;
+}

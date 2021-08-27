@@ -1,0 +1,17 @@
+{#
+/**
+* Block Name: Event
+*
+* This template renders all the content from one event
+**/
+#}
+
+{% extends 'templates/template-parts/blocks/base-block.twig' %}
+
+{% block blockContent %}
+
+  <section class="event-block component">
+    {% include 'templates/views/partials/event-listing.twig' with { item : Post(fields.event) } %}
+  </section>
+
+{% endblock %}

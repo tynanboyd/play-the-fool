@@ -1,0 +1,14 @@
+{% extends 'base.twig' %}
+
+{% block pageContent %}
+  {% if post.content %}
+    {{ post.content }}
+  {% endif %}
+  {# TODO: clean up query to avoid double query/loop #}
+  {% for event in headliners %}
+    {% include 'partials/event-listing.twig' with { item : event }  %}
+  {% endfor %}
+  {% for event in events %}
+    {% include 'partials/event-listing.twig' with { item : event }  %}
+  {% endfor %}
+{% endblock %}

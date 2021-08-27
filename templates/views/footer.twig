@@ -1,0 +1,78 @@
+  <footer class="site-footer padding-y">
+    <div class="container">
+      <div class="site-footer__top">
+        {% if options.land_acknowledgement %}
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <p class="site-footer__land-acknowledgement text-center color--white">
+              {{ options.land_acknowledgement }}
+            </p>
+          </div>
+        </div>
+        {% endif %}
+        {% if options.supporter_logos %}
+          <div class="supporter-logos row">
+            {% for item in options.supporter_logos %}
+              <div class="col-6 col-md-3">
+                {% if item.url %}
+                  <a href="{{ item.url }}">
+                {% endif %}
+                <img class="supporter-logos__logo" src="{{ TimberImage(item.logo) }}" alt="{{ item.logo.alt }}">
+                {% if item.url %}
+                  </a>
+                {% endif %}
+                </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% set social = options.social_media %}
+      <div class="row site-footer__bottom">
+        <div class="site-footer__social-icons col-12 col-sm-6">
+          {% if social.facebook %}
+          <a href="{{ social.facebook }}" class="site-footer__social-link">
+            {% include 'public/images/icons/icon-facebook.svg' %}
+          </a>
+          {% endif %}
+          {% if social.instagram %}
+          <a href="{{ social.instagram }}" class="site-footer__social-link">
+            {% include 'public/images/icons/icon-instagram.svg' %}
+          </a>
+          {% endif %}
+          {% if social.twitter %}
+          <a href="{{ social.twitter }}" class="site-footer__social-link">
+            {% include 'public/images/icons/icon-twitter.svg' %}
+          </a>
+          {% endif %}
+        </div>
+        {% if options.associations_text %}
+        <div class="col-12 col-md-6">
+          <span class="site-footer__association text-right">{{ options.associations_text }}</span>
+          {% if options.associated_logos %}
+            <div class="site-footer__associated-logos">
+              {% for logo in options.associated_logos %}
+                <div class="site-footer__associated-logo-wrap">
+                  {% if logo.url %}
+                    <a href="{{ logo.url }}" target="_blank">
+                  {% endif %}
+                  <img class="site-footer__associated-logo" src="{{ TimberImage(logo.logo_image) }}">
+                  {% if logo.url %}
+                    </a>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </footer>
+
+  {{ wp_footer }}
+
+  <!-- Hi! This site was developed by Tynan Boyd. Curious? https://tynanboyd.com -->
+
+</body>
+</html>

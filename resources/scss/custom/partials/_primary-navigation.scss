@@ -1,0 +1,28 @@
+.primary-navigation {
+  margin-bottom: 0;
+  align-items: center;
+
+  &__link {
+    color: $white;
+    font-size: 1.125rem;
+
+    &:hover {
+      color: $lavender;
+    }
+  }
+
+  &__dropdown {
+    padding: 0;
+  }
+
+  &__dropdown-item-link {
+    padding: 0.25rem 0.75rem;
+    display: block;
+
+    &:hover {
+      background-color: $purple;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}

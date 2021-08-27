@@ -1,0 +1,33 @@
+{#
+/**
+* Block Name: Short Film
+*
+* This template renders an embed, title and description
+**/
+#}
+
+{% extends 'templates/template-parts/blocks/base-block.twig' %}
+
+{% block blockContent %}
+  <section class="short-film component">
+    <div class="row justify-content-between">
+      {% if fields.embed %}
+        <div class="col-12 col-lg-7">
+          <div class="responsive-embed short-film__embed">
+            {{ fields.embed }}
+          </div>
+        </div>
+      {% endif %}
+      <div class="col-12 col-lg-4">
+        {% if fields.title %}
+          <h3 class="short-film__title">{{ fields.title }}</h3>
+        {% endif %}
+        {% if fields.content %}
+          <div class="short-film__content">
+            {{ fields.content }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

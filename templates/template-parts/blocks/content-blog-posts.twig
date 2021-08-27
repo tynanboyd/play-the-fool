@@ -1,0 +1,53 @@
+{#
+/**
+* Block Name: Hero
+*
+* This template renders a full-width background image and a headline with a button
+**/
+#}
+
+{# {% extends 'templates/template-parts/blocks/base-block.twig' %} #}
+
+{# {% block blockContent %} #}
+{% if is_preview %}
+  This block is displaying these blog posts:
+  {% for item in fields.blog_posts %}
+  {% set post = Post(item.blog_post) %}
+    <em>{{ post.title }}</em>{{ not loop.last ? ', ' : '' }}
+  {% endfor %}
+  (Click to edit)
+{% else %}
+  <section class="blog-posts component padding-y">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="section-heading color--purple">{{ fields.section_heading }}</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for item in fields.blog_posts %}
+          {% set post = Post(item.blog_post) %}
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="blog-post-card">
+              <div class="blog-post-card__top">
+                <a href="{{ post.link }}"><img class="blog-post-card__image" src="{{ TimberImage(post.thumbnail)|resize(500) }}" alt="{{ post.thumbnail.alt }}"></a>
+              </div>
+              <div class="blog-post-card__body">
+                <span class="blog-post-card__date">{{ post.date }}</span>
+                <h3 class="blog-post-card__title"><a href="{{ post.link }}" class="blog-post-card__title-link">{{ post.title }}</a></h3>
+                <p class="blog-post-card__preview">{{ post.preview.length(25) }}</p>
+              </div>
+            </article>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% if fields.all_posts_link %}
+      {% set id = function('get_option', 'page_for_posts') %}
+      <div class="text-center">
+        <a class="blog-posts__all-posts" href="{{ function('get_permalink', id) }}">All Posts</a>
+      </div>
+    {% endif %}
+  </section>
+{% endif %}
+{# {% endblock %} #}

@@ -1,0 +1,28 @@
+{% extends 'base.twig' %}
+
+{% block pageContent %}
+  <section class="blog-posts component padding-y">
+    <div class="container">
+      <div class="row">
+        {% for post in posts %}
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="blog-post-card">
+              <div class="blog-post-card__top">
+                <img class="blog-post-card__image" src="{{ TimberImage(post.thumbnail)|resize(500) }}" alt="">
+              </div>
+              <div class="blog-post-card__body">
+                <span class="blog-post-card__date">{{ post.date }}</span>
+                <h3 class="blog-post-card__title">{{ post.title }}</h3>
+                <p class="blog-post-card__preview">{{ post.preview.length(25) }}</p>
+              </div>
+            </article>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="row">
+        {% include 'partials/pagination.twig' %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

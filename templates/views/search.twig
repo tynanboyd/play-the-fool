@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+{% block pageContent %}
+
+  <div class="container">
+    <div class="row justify-content-center template-page-twig">
+      <div class="col-12 col-md-10">
+        {% for post in posts %}
+          {% include ['partials/tease.twig'] %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

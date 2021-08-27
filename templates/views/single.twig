@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block postDate %}
+  <span class="blog-single__date">{{ post.date }}</span>
+{% endblock %}
+
+{% block pageContent %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <header class="blog-single__header">
+          {% if post.thumbnail %}
+            <img class="blog-single__featured-image" src="{{ TimberImage(post.thumbnail)|resize(1088) }}">
+          {% endif %}
+        </header>
+        <main class="blog-single__main">
+          {{ post.content }}
+        </main>
+      </div>
+    </div>
+  </div>
+{% endblock %}

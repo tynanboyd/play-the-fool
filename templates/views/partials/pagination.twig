@@ -1,0 +1,8 @@
+<div class="news-pagination">
+    {% if posts.pagination.prev %}
+        <a class="news-pagination__previous button button--ghost" href="{{ posts.pagination.prev.link }}" class="prev {{ posts.pagination.prev.link|length ? '' : 'invisible' }}"><span>Previous Page</span></a>
+    {% endif %}
+    {% if posts.pagination.next %}
+        <a class="news-pagination__next button button--ghost" href="{{ posts.pagination.next.link }}" class="next {{ posts.pagination.next.link|length ? '' : 'invisible' }}"><span>Next Page</span></a>
+    {% endif %}
+</div>

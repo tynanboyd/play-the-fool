@@ -1,0 +1,46 @@
+{
+    "key": "group_5f4c207952d93",
+    "title": "Block: Event",
+    "fields": [
+        {
+            "key": "field_5f4c2083905ed",
+            "label": "Event",
+            "name": "event",
+            "type": "post_object",
+            "instructions": "Select an Event (must already exist under Events)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "event"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1598824610
+}

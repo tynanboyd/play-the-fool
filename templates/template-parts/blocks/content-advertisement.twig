@@ -1,0 +1,42 @@
+{#
+/**
+* Block Name: Advertisement
+*
+* This template renders an image with sizing options
+**/
+#}
+
+{% extends 'templates/template-parts/blocks/base-block.twig' %}
+
+{% block blockContent %}
+
+  {% if fields.image_size == 'banner' %}
+    {% set ad_image = fields.banner_image %}
+    {% set height = 200 %}
+    {% set width = 1088 %}
+  {% elseif fields.image_size == 'square' %}
+    {% set height = 300 %}
+    {% set width = 300 %}
+    {% set ad_image = fields.square_image %}
+  {% endif %}
+
+  {% if function('is_front_page') %}
+    {% set color = 'black' %}
+  {% else %}
+    {% set color = 'white' %}
+  {% endif %}
+
+  <section class="component advertisement padding-y background--{{ color }}">
+    <div class="container">
+      <div class="advertisement__wrapper justify-content-center">
+        {% if fields.advertisement_link %}
+          <a target="_blank" href="{{ fields.advertisement_link }}">
+        {% endif %}
+          <img src="{{ TimberImage(ad_image.url|resize(width, height)) }}" alt="{{ ad_image.alt }}">
+        {% if fields.advertisement_link %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

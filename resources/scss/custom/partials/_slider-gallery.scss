@@ -1,0 +1,15 @@
+.slider-gallery {
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin: 0rem 0.5rem 1rem;
+  }
+
+  &__thumbnail {
+    display: block;
+  }
+}

@@ -1,0 +1,16 @@
+.supporter-logos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+
+  &__logo {
+    max-height: 73px;
+    margin-bottom: 2rem;
+
+    @include MQ(M) {
+      width: 175px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.page-title {
+  background: linear-gradient(to bottom, $purple, $red);
+  position: relative;
+  z-index: 1;
+  padding: 2rem 0;
+  // TODO: Dry this up, see newsletter and blog posts
+
+  @include MQ(M) {
+    &:after {
+      z-index: 2;
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 20%;
+      width: 62px;
+      height: 119px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('../images/decorations/splat-white-right.svg');
+    }
+  }
+
+  &__heading {
+    color: $white;
+    font-weight: bold;
+    font-size: 2.75rem;
+
+    @include MQ(M) {
+      font-size: 4.5rem;
+    }
+  }
+}

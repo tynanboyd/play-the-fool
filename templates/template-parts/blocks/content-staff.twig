@@ -1,0 +1,30 @@
+{#
+/**
+* Block Name: Staff
+*
+* This template renders a headshot and bio
+**/
+#}
+
+{% extends 'templates/template-parts/blocks/base-block.twig' %}
+
+{% block blockContent %}
+  <section class="component staff-member">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6 col-md-4">
+          {% if fields.headshot %}
+            <div class="staff-member__headshot-wrapper">
+              <img src="{{ TimberImage(fields.headshot) }}" alt="Photo of {{ fields.name }}">
+            </div>
+          {% endif %}
+        </div>
+        <div class="col-12 col-md-8">
+          <h2 class="staff-member__position">{{ fields.position }}</h2>
+          <h3 class="staff-member__name">{{ fields.name }}</h3>
+          <div class="staff-member__bio">{{ fields.biography }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,15 @@
+.searchform {
+
+  .input-group {
+    display: flex;
+  }
+
+  .input-group-field {
+    flex: 1;
+  }
+
+  .button {
+    background-color: $black;
+    color: $white;
+  }
+}

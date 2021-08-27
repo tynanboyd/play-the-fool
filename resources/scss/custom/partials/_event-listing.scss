@@ -1,0 +1,124 @@
+.event-listing {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $red;
+  margin-bottom: 2rem;
+
+  &__headliner {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+  &__watch-now {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    color: $purple;
+    font-size: 2.78rem;
+  }
+
+  &__meta {
+    display: flex;
+  }
+
+  &__embed {
+     margin-bottom: 2rem;
+  }
+
+  &__meta-information {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  &__ticket-prices {
+    display: block;
+  }
+
+  &__ticket-price-disclaimer {
+    font-size: 0.75rem;
+    font-weight: normal;
+  }
+
+  &__thumbnail-wrapper {
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  &__thumbnail {
+    object-fit: cover;
+  }
+
+  &__from-location {
+    display: block;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  &__showtimes {
+    display: flex;
+    margin-bottom: 1.25rem;
+  }
+
+  &__showtime {
+    background-color: $black;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-right: 15px;
+  }
+
+  &__description {
+    padding-top: 1rem;
+    border-top: 1px solid $red;
+  }
+
+  &__pullquotes {
+    color: $white;
+    background: linear-gradient(to bottom, $softblue, $darkblue);
+    font-size: 1.1rem;
+    padding: 1.25rem;
+  }
+
+  &__pullquote {
+    border: none;
+    margin: 0 0 1rem 0;
+  }
+
+  &__pullquote-quotation {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  &__citation {
+
+  }
+
+  &__embed {
+    margin-bottom: 2rem;
+  }
+}
+
+.showtime {
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &__month {
+    font-size: 0.75rem;
+  }
+
+  &__day {
+    font-size: 1.45rem;
+  }
+
+  &__time {
+    font-size: 0.75rem;
+  }
+}

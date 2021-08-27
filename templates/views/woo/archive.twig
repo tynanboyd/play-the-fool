@@ -1,0 +1,37 @@
+{% extends 'base.twig' %}
+
+{% block pageTitle %}
+  Play the Fool Festival Store
+{% endblock %}
+
+{% block pageContent %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      {% do action('woocommerce_before_main_content') %}
+      <div class="before-shop-loop">
+          {% do action('woocommerce_before_shop_loop') %}
+      </div>
+    </div>
+  </div>
+
+  <div class="woocommerce-product-loop row">
+      {% for post in products %}
+        <div class="col-12 col-sm-6 col-md-4 mb-5">
+          {% include ["partials/tease-product.twig"] %}
+        </div>
+      {% endfor %}
+  </div>
+
+  <div class="row">
+    <div class="col">
+      {% do action('woocommerce_after_shop_loop') %}
+      {% do action('woocommerce_after_main_content') %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock  %}

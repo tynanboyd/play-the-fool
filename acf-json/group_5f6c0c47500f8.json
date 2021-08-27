@@ -1,0 +1,40 @@
+{
+    "key": "group_5f6c0c47500f8",
+    "title": "Block: Responsive Embed",
+    "fields": [
+        {
+            "key": "field_5f6c0c5b4d155",
+            "label": "Embed",
+            "name": "embed",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/responsive-embed"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1600916580
+}

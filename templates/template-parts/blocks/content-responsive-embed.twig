@@ -1,0 +1,19 @@
+{#
+/**
+* Block Name: Responsive Embed
+*
+* This template renders a full-width responsive embed
+**/
+#}
+
+{% extends 'templates/template-parts/blocks/base-block.twig' %}
+
+{% block blockContent %}
+  <section class="responsive-embed-component padding-y">
+    <div class="container">
+      <div class="responsive-embed">
+        {{ fields.embed }}
+      </div>
+    </div>
+  </section>
+{% endblock %}

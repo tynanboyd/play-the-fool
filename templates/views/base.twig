@@ -1,0 +1,17 @@
+<div class="page-title">
+  <div class="container">
+    <h1 class="page-title__heading">
+      {% block pageTitle %}
+        {{ post.title }}
+      {% endblock %}
+      {% block postDate %}
+      {% endblock %}
+    </h1>
+  </div>
+</div>
+
+<main class="main-page-content">
+  {% block pageContent %}
+    {{ post.content }}
+  {% endblock %}
+</main>
