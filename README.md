@@ -1,3 +1,4 @@
+`nvm install 12` `nvm use 12` `npm start`
 ## Workplace requirements
 1. Gulp (installation instructions: https://gulpjs.com/docs/en/getting-started/quick-start)
     - Only need to follow the 'Check for node, npm, and npx' and 'Install the gulp command line utility' step
