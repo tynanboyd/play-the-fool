@@ -1,10 +1,12 @@
 .supporter-logos {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1rem 0;
 
   &__logo {
+    min-height: 25px;
     max-height: 73px;
     margin-bottom: 2rem;
 
