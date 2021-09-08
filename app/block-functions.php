@@ -37,6 +37,7 @@ function found_allowed_block_types($allowed_blocks, $post)
         $allowed_blocks[] = 'acf/newsletter-form';
         $allowed_blocks[] = 'acf/lightbox-gallery';
         $allowed_blocks[] = 'acf/event';
+        $allowed_blocks[] = 'acf/event-listing';
         $allowed_blocks[] = 'acf/staff';
         $allowed_blocks[] = 'acf/short-film';
         $allowed_blocks[] = 'acf/responsive-embed';

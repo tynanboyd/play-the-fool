@@ -59,7 +59,13 @@
 
   &__showtimes {
     display: flex;
+    flex-wrap: wrap;
+    flex: 0;
     margin-bottom: 1.25rem;
+
+    @include MQ(M) {
+      flex-wrap: nowrap;
+    }
   }
 
   &__showtime {
@@ -73,6 +79,11 @@
     height: 100px;
     text-align: center;
     margin-right: 15px;
+    margin-bottom: 1rem;
+
+    @include MQ(M) {
+      margin-bottom: 0;
+    }
   }
 
   &__description {
@@ -119,6 +130,10 @@
   }
 
   &__time {
+    font-size: 0.75rem;
+  }
+
+  &__weekday {
     font-size: 0.75rem;
   }
 }

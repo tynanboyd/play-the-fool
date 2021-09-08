@@ -103,6 +103,18 @@ function register_custom_acf_blocks() {
     ]);
 
     acf_register_block_type([
+        'name' => 'event-listing',
+        'title' => __('Event Listing'),
+        'description' => __('Display all events from a given category'),
+        'render_template' => '/templates/template-parts/blocks/event-listing.php',
+        'category' => 'common',
+        'icon' => 'tickets',
+        'keywords' => ['event', 'listing'],
+        'mode' => 'auto',
+        'post_types' => ['page'],
+    ]);
+
+    acf_register_block_type([
         'name' => 'staff',
         'title' => __('Staff'),
         'description' => __('Display a headshot and bio'),

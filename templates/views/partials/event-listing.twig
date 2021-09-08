@@ -47,8 +47,8 @@
           <div class="event-listing__showtimes">
             {% for showtime in item.meta('showtimes') %}
               <div class="event-listing__showtime showtime">
-                <span class="showtime__month">{{ showtime.showtime|date('M') }}</span>
-                <span class="showtime__day">{{ showtime.showtime|date('d') }}</span>
+                <span class="showtime__month">{{ showtime.showtime|date('D') }}</span>
+                <span class="showtime__day">{{ showtime.showtime|date('M') }} {{ showtime.showtime|date('d') }}</span>
                 <span class="showtime__time">{{ showtime.showtime|date('g:ia') }}</span>
               </div>
             {% endfor %}

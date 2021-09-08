@@ -1,0 +1,20 @@
+{#
+/**
+* Block Name: Event Listing
+*
+* This template renders a list of events with a specific category
+**/
+#}
+
+{% extends 'templates/template-parts/blocks/base-block.twig' %}
+
+{% block blockContent %}
+{% if is_preview %}
+"This is blah blah"
+{% else %}
+{% for event in events %}
+  {% include 'templates/template-parts/blocks/content-event.twig' %}
+{% endfor %}
+{% endif %}
+
+{% endblock %}
